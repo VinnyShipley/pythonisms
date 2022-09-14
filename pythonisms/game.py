@@ -1,4 +1,3 @@
-from linked_list import LinkedList
 from functools import wraps
 from time import sleep, time
 

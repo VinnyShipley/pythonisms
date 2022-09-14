@@ -4,6 +4,7 @@ class LinkedList:
   
   def __init__(self, collection=None):
     self.head = None
+    self.len = 0
     if collection:
       for item in reversed(collection):
         self.insert(item)
@@ -26,16 +27,22 @@ class LinkedList:
         out += f'{ {value} } -> '
       
       return out + 'None'
+    
+  def __len__(self):
+    return self.len
 
 
   # Class methods
   
   def insert(self, value):
     self.head = Node(value)
+    self.len += 1
   
   def append(self, value):
+    self.len += 1
     if self.head == None:
       self.head = Node(value)
+      return
       
     current = self.head
     
@@ -43,6 +50,7 @@ class LinkedList:
       current = current.next
     
     current.next = Node(value)
+
 
 
 class Node:
