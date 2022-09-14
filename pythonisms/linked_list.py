@@ -9,9 +9,26 @@ class LinkedList:
         self.insert(item)
         
   def __iter__(self):
-    pass
-  
-  # Regular methods
+    
+    def value_generator():
+      current = self.head
+      
+      while current:
+        yield current.value
+        current = current.next
+
+    return value_generator()
+
+  def __str__(self):
+      out = ''
+      
+      for value in self:
+        out += f'{ {value} } -> '
+      
+      return out + 'None'
+
+
+  # Class methods
   
   def insert(self, value):
     self.head = Node(value)
