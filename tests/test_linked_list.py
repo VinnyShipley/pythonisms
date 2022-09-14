@@ -16,4 +16,28 @@ def test_insert_with_iter():
   expected = ['clown']
   
   assert actual == expected
+
+
+def test_list_comprehension():
+  list = LinkedList()
+  list.append('a')
+  list.append('b')
+  list.append('c')
   
+  comp_list = [x for x in list]
+  
+  actual = comp_list
+  expected = ['a', 'b', 'c']
+  
+  assert actual == expected
+  
+
+def test_length():
+  list = LinkedList
+  list.append(1)
+  list.append('b')
+  list.append('c')
+  
+  actual = len(list)
+  expected = 3
+  assert actual == expected
